@@ -5,6 +5,7 @@ public class Todo {
 	private String name;
 	private Boolean status;
 	
+	public Todo() {}
 	public Todo(int id, String name, Boolean status) {
 		this.id = id;
 		this.name = name;
