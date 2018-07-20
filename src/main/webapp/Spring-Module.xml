@@ -11,11 +11,23 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd ">
 
-	<mvc:annotation-driven/>
+	<!-- <import resource="Spring-Datasource.xml" /> -->
+
+	<mvc:annotation-driven />
 
 	<!-- Activate general annotation support of spring -->
-	<context:annotation-config/>
+	<context:annotation-config />
+	
 
-	<context:component-scan base-package="com.todo"/>
-
+	<context:component-scan base-package="com.todo" />
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/todoapp" />
+		<property name="username" value="root" />
+		<property name="password" value="QSN001" />
+	</bean>
+	<!-- <bean id="todoDao" class="com.todo.dao.impl.TodoDaoImpl">  
+		<property name="dataSource" ref="dataSource"></property>  
+	</bean>  --> 
 </beans>

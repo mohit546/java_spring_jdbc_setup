@@ -5,6 +5,12 @@ public class Todo {
 	private String name;
 	private Boolean status;
 	
+	public Todo(int id, String name, Boolean status) {
+		this.id = id;
+		this.name = name;
+		this.status = status;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -22,6 +28,11 @@ public class Todo {
 	}
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+	
+	@Override
+	public String toString() {
+		return "Customer [status=" + status + ", id=" + id + ", name=" + name + "]";
 	}
 
 }
